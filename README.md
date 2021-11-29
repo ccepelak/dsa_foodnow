@@ -20,12 +20,13 @@ We've focused our application on improved specificity in:
 
 
 <b>Packages & libraries used: </b>
--Pandas
--Sci-kit Learn
--Numpy
--Math
--Random
--Geopandas
+<ol>
+  <li>Pandas</li>
+  <li>Sci-kit Learn</li>
+  <li>Numpy</li>
+  <li>Math</li>
+  <li>Random</li>
+  <li>Geopandas</li> </ol>
 
 
 

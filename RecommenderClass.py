@@ -21,6 +21,37 @@ import geopandas as gpd
 
 
 class RecommenderSystem:
+    '''
+     A class used to represent the recomender system
+    ...
+
+    Attributes
+    ----------
+    restaurant_list : list
+        restaurants of the database
+    user_input : str
+       user preferences
+    prepared_list : list
+        creates a list of restaurants with user preferences
+    cm : int
+    cs: int
+        centimeters closeness one to another
+    scores: list
+        enumeration of closeness
+    sorted_scores: 
+        ranking of restaurants 
+            
+    Methods
+    -------
+    prepare_list()
+        creates a list with the restaurant features and user input
+    get_similar_restaurants()
+        uses cosine similarity to get the 10 more similar restaurants to the user input
+    list_results()
+        creates a list with the full information of the 10 most similar restaurants
+    filter_best_ranked()
+        filter the top 3 restaurants for the user input
+    '''
     #Constructor
     def __init__(self, user_input):
         self.__restaurants= RestaurantList()

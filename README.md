@@ -13,6 +13,7 @@ We've focused our application on improved specificity in:
 
 -------------------------
 <b>Data source:</b> <a href="https://www.kaggle.com/stefanoleone992/tripadvisor-european-restaurants?select=tripadvisor_european_restaurants.csv">TripAdvisor Restaurant Detail List</a> 
+
 (We've uploaded a compressed version of a cleaned dataset: "TA_restaurants_curated.csv") 
 
 <b>Recommender system:</b> Cosine Similarity

@@ -14,7 +14,7 @@ import re
 #%%
 
 #Preparing the data
-df = pd.read_csv("D:/Data Science Hertie/DSA/restaurants/archive/TA_restaurants_curated.csv")
+df = pd.read_csv("TA_restaurants_curated.csv")
 
 #filter restaurants in Berlin
 df_Berlin=df[df.City=="Berlin"]
@@ -94,6 +94,9 @@ class Restaurant:
         features = self.displayCuisine() + " " + self.displayPrice()
         return features
 
+    #Getter for the name attribute
+    def getName(self):
+        return self.__name
 
 #%%
 
@@ -144,6 +147,11 @@ class RestaurantList:
     def restaurantShow(self):
         for i in self.__restaurant_list:
             i.displayRestaurant()
+            
+    #Displays the list of restaurants
+    def getRestaurantList(self):
+        rest_list=self.__restaurant_list
+        return rest_list
 
          
 #%%

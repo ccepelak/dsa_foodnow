@@ -40,7 +40,7 @@ import geopandas as gpd
 class RecommenderSystem:
     '''
      A class used to represent the recomender system algorithm
-    ...
+    
 
     Attributes
     ----------

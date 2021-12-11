@@ -32,6 +32,7 @@ import math
 import random
 import re
 import geopandas as gpd
+from restaurant_restaurantlist_classes import RestaurantList
 
 
 #%%

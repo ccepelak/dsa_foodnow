@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module RecommenderClass</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>RecommenderClass</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/estebangracialeon/Documents/PYTHON/dsa_foodnow/RecommenderClass.py">/Users/estebangracialeon/Documents/PYTHON/dsa_foodnow/RecommenderClass.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Thu&nbsp;Nov&nbsp;25&nbsp;18:49:00&nbsp;2021<br>
+&nbsp;<br>
+@author:&nbsp;angeladuarte<br>
+&nbsp;<br>
+&nbsp;<br>
+'''<br>
+This&nbsp;script&nbsp;allows&nbsp;the&nbsp;user&nbsp;to&nbsp;input&nbsp;his/her&nbsp;restaurant&nbsp;preferences&nbsp;to&nbsp;the<br>
+recommender&nbsp;system.&nbsp;The&nbsp;program&nbsp;will&nbsp;output&nbsp;the&nbsp;restaurants&nbsp;with&nbsp;the&nbsp;most&nbsp;<br>
+similar&nbsp;features&nbsp;to&nbsp;those&nbsp;of&nbsp;the&nbsp;user&nbsp;has&nbsp;input.<br>
+&nbsp;<br>
+This&nbsp;program&nbsp;accepts&nbsp;input&nbsp;as&nbsp;a&nbsp;string/list<br>
+&nbsp;<br>
+The&nbsp;script&nbsp;requieres&nbsp;"pandas",&nbsp;"numpy",&nbsp;"sklearn.metrics.pairwise",&nbsp;<br>
+"sklearn.feature_extraction.text",&nbsp;"math",&nbsp;"random"&nbsp;and&nbsp;"re"&nbsp;&nbsp;be&nbsp;installed<br>
+within&nbsp;the&nbsp;Python&nbsp;environment&nbsp;you&nbsp;are&nbsp;running&nbsp;this&nbsp;script&nbsp;in.<br>
+&nbsp;<br>
+This&nbsp;file&nbsp;can&nbsp;also&nbsp;be&nbsp;imported&nbsp;as&nbsp;a&nbsp;module&nbsp;and&nbsp;contains&nbsp;the&nbsp;following<br>
+functions:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Functions/methods=??</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="geopandas.html">geopandas</a><br>
+<a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="random.html">random</a><br>
+<a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="RecommenderClass.html#Recommendation">Recommendation</a>
+</font></dt><dt><font face="helvetica, arial"><a href="RecommenderClass.html#RecommenderSystem">RecommenderSystem</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Recommendation">class <strong>Recommendation</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Recommendation">Recommendation</a>(output)<br>
+&nbsp;<br>
+Structure&nbsp;of&nbsp;the&nbsp;recommendation&nbsp;class,&nbsp;which&nbsp;will&nbsp;be&nbsp;used&nbsp;by&nbsp;the&nbsp;<a href="#RecommenderSystem">RecommenderSystem</a>&nbsp;class<br>
+&nbsp;<br>
+Parameters<br>
+---------<br>
+output&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;the&nbsp;restaurants&nbsp;and&nbsp;the&nbsp;phrase&nbsp;given&nbsp;to&nbsp;the&nbsp;user<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Recommendation-__init__"><strong>__init__</strong></a>(self, output)</dt><dd><tt>This&nbsp;is&nbsp;the&nbsp;constructor&nbsp;of&nbsp;the&nbsp;class&nbsp;Recomendation<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+output&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;the&nbsp;restaurants&nbsp;and&nbsp;the&nbsp;phrase&nbsp;given&nbsp;to&nbsp;the&nbsp;user</tt></dd></dl>
+
+<dl><dt><a name="Recommendation-display_output"><strong>display_output</strong></a>(self)</dt><dd><tt>Displays&nbsp;the&nbsp;output&nbsp;to&nbsp;the&nbsp;user</tt></dd></dl>
+
+<dl><dt><a name="Recommendation-plot_output"><strong>plot_output</strong></a>(self)</dt><dd><tt>Displays&nbsp;a&nbsp;message&nbsp;to&nbsp;the&nbsp;user&nbsp;while&nbsp;waiting&nbsp;for&nbsp;the&nbsp;recommendation</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RecommenderSystem">class <strong>RecommenderSystem</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#RecommenderSystem">RecommenderSystem</a>(user_input)<br>
+&nbsp;<br>
+&nbsp;A&nbsp;class&nbsp;used&nbsp;to&nbsp;represent&nbsp;the&nbsp;recomender&nbsp;system&nbsp;algorithm<br>
+&nbsp;<br>
+&nbsp;<br>
+Attributes<br>
+----------<br>
+restaurants:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restaurants&nbsp;list&nbsp;<br>
+user_input&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;user&nbsp;preferences<br>
+prepared_list&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;creates&nbsp;a&nbsp;list&nbsp;of&nbsp;restaurants&nbsp;with&nbsp;user&nbsp;preferences<br>
+cm&nbsp;:&nbsp;int<br>
+cs:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;centimeters&nbsp;closeness&nbsp;one&nbsp;to&nbsp;another<br>
+scores:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;enumeration&nbsp;of&nbsp;closeness<br>
+sorted_scores:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ranking&nbsp;of&nbsp;restaurants&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Methods<br>
+-------<br>
+<a href="#RecommenderSystem-getRestaurants">getRestaurants</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;restaurant&nbsp;list<br>
+<a href="#RecommenderSystem-getUserInput">getUserInput</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;user&nbsp;preference<br>
+<a href="#RecommenderSystem-getPreparedList">getPreparedList</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;user&nbsp;preference<br>
+<a href="#RecommenderSystem-getRestaurantFeatures">getRestaurantFeatures</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;the&nbsp;restaurant&nbsp;features<br>
+<a href="#RecommenderSystem-setPreparedList">setPreparedList</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Sets&nbsp;a&nbsp;list&nbsp;with&nbsp;the&nbsp;user&nbsp;preferences&nbsp;and&nbsp;the&nbsp;restaurant&nbsp;features<br>
+<a href="#RecommenderSystem-get_similar_restaurants">get_similar_restaurants</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Uses&nbsp;cosine&nbsp;similarity&nbsp;to&nbsp;get&nbsp;the&nbsp;10&nbsp;more&nbsp;similar&nbsp;restaurants&nbsp;to&nbsp;the&nbsp;user&nbsp;input<br>
+get_selected_indexes()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Gets&nbsp;the&nbsp;indexes&nbsp;from&nbsp;the&nbsp;chosen&nbsp;restaurants&nbsp;on&nbsp;a&nbsp;list<br>
+<a href="#RecommenderSystem-list_results">list_results</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Prints&nbsp;a&nbsp;list&nbsp;with&nbsp;the&nbsp;features&nbsp;of&nbsp;the&nbsp;10&nbsp;chosen&nbsp;restaurants.&nbsp;Helps&nbsp;to&nbsp;check<br>
+get_selected_restaurants()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Gets&nbsp;the&nbsp;selected&nbsp;restaurants&nbsp;into&nbsp;a&nbsp;list&nbsp;or&nbsp;Restaurants<br>
+<a href="#RecommenderSystem-filter_best_ranked">filter_best_ranked</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Filters&nbsp;the&nbsp;selected&nbsp;restaurants&nbsp;according&nbsp;to&nbsp;their&nbsp;ratings<br>
+<a href="#RecommenderSystem-outputResult">outputResult</a>()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Displays&nbsp;the&nbsp;3&nbsp;selected&nbsp;restaurants&nbsp;on&nbsp;a&nbsp;dictionary&nbsp;name:&nbsp;features<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RecommenderSystem-__init__"><strong>__init__</strong></a>(self, user_input)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-filter_best_ranked"><strong>filter_best_ranked</strong></a>(self)</dt><dd><tt>Returns<br>
+-------<br>
+Sorted_restaurants:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;the&nbsp;first&nbsp;3&nbsp;restaurants&nbsp;according&nbsp;to&nbsp;the&nbsp;rating</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-getPreparedList"><strong>getPreparedList</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;user&nbsp;preference<br>
+&nbsp;<br>
+Returns<br>
+------<br>
+user&nbsp;preference</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-getRestaurantFeatures"><strong>getRestaurantFeatures</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;restaurant&nbsp;features<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+features:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;of&nbsp;restaurant&nbsp;and&nbsp;its&nbsp;features</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-getRestaurants"><strong>getRestaurants</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;restaurants&nbsp;list<br>
+&nbsp;<br>
+Returns<br>
+------<br>
+returns&nbsp;restaurant&nbsp;list</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-getSelectedIndexes"><strong>getSelectedIndexes</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;indexes&nbsp;from&nbsp;the&nbsp;chosen&nbsp;restaurants&nbsp;on&nbsp;a&nbsp;list<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+indexes&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;the&nbsp;indexes&nbsp;of&nbsp;chosen&nbsp;restaurants</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-getSelectedRestaurants"><strong>getSelectedRestaurants</strong></a>(self)</dt><dd><tt>Gets&nbsp;the&nbsp;selected&nbsp;restaurants&nbsp;into&nbsp;a&nbsp;list&nbsp;or&nbsp;Restaurants<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+closest&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;the&nbsp;restaurants&nbsp;with&nbsp;features&nbsp;similar&nbsp;to&nbsp;user&nbsp;input</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-getUserInput"><strong>getUserInput</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;user&nbsp;preference<br>
+&nbsp;<br>
+Returns<br>
+------<br>
+user&nbsp;preference</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-get_similar_restaurants"><strong>get_similar_restaurants</strong></a>(self)</dt><dd><tt>Uses&nbsp;cosine&nbsp;similarity&nbsp;to&nbsp;get&nbsp;the&nbsp;10&nbsp;more&nbsp;similar&nbsp;restaurants&nbsp;to&nbsp;the&nbsp;user&nbsp;input<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+sorted_scores:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Have&nbsp;a&nbsp;list&nbsp;of&nbsp;10&nbsp;restaurants&nbsp;similars&nbsp;to&nbsp;user&nbsp;input</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-list_results"><strong>list_results</strong></a>(self)</dt><dd><tt>Prints&nbsp;a&nbsp;list&nbsp;with&nbsp;the&nbsp;features&nbsp;of&nbsp;the&nbsp;10&nbsp;chosen&nbsp;restaurants.&nbsp;Helps&nbsp;to&nbsp;check<br>
+&nbsp;<br>
+Parameters<br>
+-------<br>
+results<br>
+&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;the&nbsp;results&nbsp;of&nbsp;restaurants</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-outputResult"><strong>outputResult</strong></a>(self)</dt><dd><tt>Displays&nbsp;the&nbsp;3&nbsp;selected&nbsp;restaurants&nbsp;on&nbsp;a&nbsp;dictionary&nbsp;name:&nbsp;features.<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+features&nbsp;:&nbsp;dictionary<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dictionary&nbsp;with&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;restaurant&nbsp;and&nbsp;its&nbsp;features</tt></dd></dl>
+
+<dl><dt><a name="RecommenderSystem-setPreparedList"><strong>setPreparedList</strong></a>(self)</dt><dd><tt>Sets&nbsp;a&nbsp;list&nbsp;with&nbsp;the&nbsp;user&nbsp;preferences&nbsp;and&nbsp;the&nbsp;restaurant&nbsp;features<br>
+&nbsp;<br>
+Parameters<br>
+-------<br>
+preparedList&nbsp;:&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;creates&nbsp;a&nbsp;list&nbsp;of&nbsp;restaurant&nbsp;features&nbsp;****</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>input2</strong> = 'International European Spicy luxury'<br>
+<strong>syst</strong> = &lt;RecommenderClass.RecommenderSystem object&gt;</td></tr></table>
+</body></html>

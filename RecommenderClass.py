@@ -4,7 +4,7 @@
 Created on Thu Nov 25 18:49:00 2021
 
 @author: angeladuarte
-"""
+
 
 '''
 This script allows the user to input his/her restaurant preferences to the
@@ -21,7 +21,7 @@ This file can also be imported as a module and contains the following
 functions:
 
     * Functions/methods=??
-'''
+"""
 #import required libraries
 
 import pandas as pd

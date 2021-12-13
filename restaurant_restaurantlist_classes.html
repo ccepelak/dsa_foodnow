@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module restaurant_restaurantlist_classes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>restaurant_restaurantlist_classes</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/estebangracialeon/Documents/PYTHON/dsa_foodnow/restaurant_restaurantlist_classes.py">/Users/estebangracialeon/Documents/PYTHON/dsa_foodnow/restaurant_restaurantlist_classes.py</a></font></td></tr></table>
+    <p><tt>Created&nbsp;on&nbsp;Thu&nbsp;Dec&nbsp;&nbsp;2&nbsp;12:20:29&nbsp;2021<br>
+&nbsp;<br>
+@author:&nbsp;bakic</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="restaurant_restaurantlist_classes.html#Restaurant">Restaurant</a>
+</font></dt><dt><font face="helvetica, arial"><a href="restaurant_restaurantlist_classes.html#RestaurantList">RestaurantList</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Restaurant">class <strong>Restaurant</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Restaurant">Restaurant</a>(name,&nbsp;cuisine,&nbsp;ranking,&nbsp;rating,&nbsp;price,&nbsp;reviews)<br>
+&nbsp;<br>
+Defines&nbsp;what&nbsp;kind&nbsp;of&nbsp;input&nbsp;does&nbsp;the&nbsp;restaurant&nbsp;take<br>
+&nbsp;<br>
+Attributes<br>
+--------<br>
+name:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;of&nbsp;the&nbsp;restaurant<br>
+cuisine:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cuisine&nbsp;styles&nbsp;of&nbsp;the&nbsp;restaurant<br>
+ranking:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ranking&nbsp;of&nbsp;the&nbsp;restaurant<br>
+rating:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;rating&nbsp;of&nbsp;the&nbsp;restaurant<br>
+price:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;avg&nbsp;price&nbsp;of&nbsp;the&nbsp;restaurant<br>
+reviews:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;reviews&nbsp;of&nbsp;the&nbsp;restaurant&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Methods<br>
+-------<br>
+<a href="#Restaurant-displayRestaurant">displayRestaurant</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prints&nbsp;the&nbsp;restaurant<br>
+<a href="#Restaurant-getCuisine">getCuisine</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;cuisine&nbsp;styles&nbsp;from&nbsp;the&nbsp;restaurant<br>
+<a href="#Restaurant-getRating">getRating</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;rating&nbsp;as&nbsp;a&nbsp;float<br>
+<a href="#Restaurant-getReviews">getReviews</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;review&nbsp;number&nbsp;as&nbsp;an&nbsp;integer<br>
+<a href="#Restaurant-displayCuisine">displayCuisine</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;cuisine&nbsp;styles&nbsp;as&nbsp;a&nbsp;string&nbsp;<br>
+<a href="#Restaurant-displayPrice">displayPrice</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;displays&nbsp;the&nbsp;average&nbsp;price&nbsp;of&nbsp;the&nbsp;restaurant<br>
+<a href="#Restaurant-displayFeatures">displayFeatures</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;display&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurant<br>
+getNames():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;names&nbsp;of&nbsp;the&nbsp;attributes<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Restaurant-__init__"><strong>__init__</strong></a>(self, name, cuisine, ranking, rating, price, reviews)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-displayCuisine"><strong>displayCuisine</strong></a>(self)</dt><dd><tt>returns&nbsp;cuisine&nbsp;styles&nbsp;as&nbsp;a&nbsp;string&nbsp;<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+cuisine_string&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;the&nbsp;cuisine&nbsp;style&nbsp;of&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-displayFeatures"><strong>displayFeatures</strong></a>(self)</dt><dd><tt>pastes&nbsp;cuisine&nbsp;style&nbsp;and&nbsp;price&nbsp;in&nbsp;a&nbsp;string<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+features&nbsp;:&nbsp;function<br>
+&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;cuisine&nbsp;and&nbsp;price</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-displayPrice"><strong>displayPrice</strong></a>(self)</dt><dd><tt>return&nbsp;the&nbsp;average&nbsp;price&nbsp;of&nbsp;the&nbsp;restaurant&nbsp;depending&nbsp;its&nbsp;price<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+price_string&nbsp;:&nbsp;str<br>
+&nbsp;&nbsp;&nbsp;&nbsp;displays&nbsp;the&nbsp;average&nbsp;price&nbsp;of&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-displayRestaurant"><strong>displayRestaurant</strong></a>(self)</dt><dd><tt>prints&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-getCuisine"><strong>getCuisine</strong></a>(self)</dt><dd><tt>returns&nbsp;cuisine&nbsp;styles&nbsp;from&nbsp;the&nbsp;restaurant<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+cuisine:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;are&nbsp;cuisine&nbsp;styles&nbsp;from&nbsp;the&nbsp;restaruant</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-getName"><strong>getName</strong></a>(self)</dt><dd><tt>Getter&nbsp;for&nbsp;attributes<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;the&nbsp;name&nbsp;of&nbsp;any&nbsp;attribute</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-getRating"><strong>getRating</strong></a>(self)</dt><dd><tt>returns&nbsp;rating&nbsp;as&nbsp;a&nbsp;float<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+rating&nbsp;:&nbsp;float<br>
+&nbsp;&nbsp;&nbsp;&nbsp;floats&nbsp;the&nbsp;rating&nbsp;of&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="Restaurant-getReviews"><strong>getReviews</strong></a>(self)</dt><dd><tt>returns&nbsp;review&nbsp;number&nbsp;as&nbsp;an&nbsp;integer<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+reviews&nbsp;:&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;returns&nbsp;review&nbsp;number&nbsp;as&nbsp;integer</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RestaurantList">class <strong>RestaurantList</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RestaurantList-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>The&nbsp;constructor&nbsp;of&nbsp;the&nbsp;<a href="#RestaurantList">RestaurantList</a>&nbsp;class<br>
+&nbsp;<br>
+Parameters<br>
+-------<br>
+restaurant_list:list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;restaurants&nbsp;with&nbsp;all&nbsp;attributes</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-getRestaurantList"><strong>getRestaurantList</strong></a>(self)</dt><dd><tt>returns&nbsp;the&nbsp;restaurant&nbsp;list<br>
+&nbsp;<br>
+Returns<br>
+------<br>
+rest_list:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restaurant&nbsp;with&nbsp;attributes</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-restaurantFeatures"><strong>restaurantFeatures</strong></a>(self)</dt><dd><tt>returns&nbsp;a&nbsp;list&nbsp;of&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurants<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+features_list&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;attributes&nbsp;of&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-restaurantShow"><strong>restaurantShow</strong></a>(self)</dt><dd><tt>check&nbsp;if&nbsp;the&nbsp;class&nbsp;is&nbsp;working</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>columns</strong> = ['Name', 'Cuisine Style', 'Ranking', 'Rating', 'Price Range', 'Number of Reviews']<br>
+<strong>df</strong> =         Unnamed: 0  ...      ID_TA
+0            ... 1666  ...  d13349842
+
+[125527 rows x 11 columns]<br>
+<strong>df_Berlin</strong> =        Unnamed: 0  ...      ID_TA
+13797         ...   7077  ...  d13358317
+
+[7078 rows x 11 columns]<br>
+<strong>df_berlin</strong> =       Unnamed:_0  ...      ID_TA
+0              ...   6307  ...   d5823014
+
+[3438 rows x 11 columns]<br>
+<strong>restaurant</strong> = &lt;restaurant_restaurantlist_classes.Restaurant object&gt;<br>
+<strong>restaurant1</strong> = &lt;restaurant_restaurantlist_classes.Restaurant object&gt;<br>
+<strong>restaurant2</strong> = &lt;restaurant_restaurantlist_classes.Restaurant object&gt;<br>
+<strong>restaurants</strong> = &lt;restaurant_restaurantlist_classes.RestaurantList object&gt;</td></tr></table>
+</body></html>

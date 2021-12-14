@@ -11,11 +11,12 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
-import math
-import random
-import re
-import geopandas as gpd
+#import math
+#import random
+#import re
+#import geopandas as gpd
 from restaurant_restaurantlist_classes import RestaurantList
+from data import df_berlin
 
 
 #%%
@@ -107,6 +108,17 @@ class RecommenderSystem:
         for rest in closest: 
             features.update({rest.getName():rest.displayFeatures()})
         return features
+    
+    #Helena's output: just a different way of presenting it, for Angela to approve or not :)
+    def outputResult2(self):
+        closest=self.filter_best_ranked() #I don't know how to stop Python from printing this
+        no = 1
+        print("Your matches are:")
+        for rest in closest:
+            f = str(no) + " " + rest.displayRestaurant() 
+            no += 1
+            print(f)
+        
         
         
         
@@ -129,6 +141,7 @@ syst.getSelectedRestaurants()
 syst.filter_best_ranked()
 syst.outputResult()
 
+syst.outputResult2()
         
 #%%
 #Structure of the recommendation class, which will be used by the RecommenderSystem class

@@ -50,7 +50,8 @@ class Restaurant:
     
     #method that displays the restaurant, needs a clean if it will be used for output because self.__cuisine has brackets
     def displayRestaurant(self):
-        print(f"The restaurant name is {self.__name} and it boasts {self.__cuisine} cuisine")
+        display = self.getName() + " prepares " + self.displayCuisine() + " cuisine and it's rated at " + str(self.getRating()) + " by " + str(self.getReviews()) + " people like you." 
+        return display
     
     #method that returns cuisine styles from the restaurant, to be deleted later (just for checking)
     def getCuisine(self):

@@ -27,7 +27,8 @@ class RecommenderSystem:
         self.__restaurants= RestaurantList()
         self.__user_preference=user_input
         self.__prepared_list=[]
-     
+    def __str__(self):
+        return 'This is a Cosine Similarity recommender system. With input {}'.format(self.getUserInput())        
         
     #getters and setters:
     #returns the restaurant list.
@@ -112,22 +113,23 @@ class RecommenderSystem:
         
         
 #%%
-
 #Testing the recommender system with some inputs. 
-input2="International European Spicy luxury"
+if __name__=='__main__':
+    input2="International European Spicy luxury"
+    #Creating the recommender system
+    syst=RecommenderSystem(input2)
+       
+    #running the required methods from the recommender system class
+    syst.setPreparedList()
+    syst.getPreparedList()
+    syst.get_similar_restaurants()
+    syst.list_results()     
+    syst.getSelectedIndexes()
+    syst.getSelectedRestaurants()
+    syst.filter_best_ranked()
+    syst.outputResult()
 
-#Creating the recommender system
-syst=RecommenderSystem(input2)
-   
-#running the required methods from the recommender system class
-syst.setPreparedList()
-syst.getPreparedList()
-syst.get_similar_restaurants()
-syst.list_results()     
-syst.getSelectedIndexes()
-syst.getSelectedRestaurants()
-syst.filter_best_ranked()
-syst.outputResult()
+
 
         
 #%%

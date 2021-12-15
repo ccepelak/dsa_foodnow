@@ -39,11 +39,13 @@ tries = 1
 while tries <= 5:
     cuisine = input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese. 
              Make sure to separate your entries with a comma (,).""")
-    price = input("""What is your prefered price range? /n
+    price = input("""What is your prefered price range?
               Enter 'budget', 'medium' or 'luxury'""")
     
     #to be deleted with user class
     user = cuisine + " " + price
+    
+    print("You are looking for: " + user)
     
     #minimum code to get output
     recommendation = RecommenderSystem(user)

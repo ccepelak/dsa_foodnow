@@ -69,3 +69,11 @@ class User_Preference:
       
     return self.price_range
 
+
+    def displayFeatures(self):
+        features = self.Cuisine_Style() + " " + self.getPrice()
+        return features
+
+
+
+

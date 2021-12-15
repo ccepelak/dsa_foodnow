@@ -4,8 +4,7 @@ Created on Tue Dec 14 16:07:49 2021
 
 @author: bakic
 """
-
-import pandas as pd
+#package import
 from data import df_berlin
 from class_restaurant import Restaurant
 
@@ -23,7 +22,10 @@ class RestaurantList:
             restaurant = Restaurant(rows.Name, rows.Cuisine_Style, rows.Ranking, rows.Rating, rows.Price_Range, rows.Number_of_Reviews)
             #append the list
             self.__restaurant_list.append(restaurant)
-    
+    #Prints a string when it is asked to print an instance of this class   
+    def __str__(self):
+        return 'This is a list of restaurant with {} entries'.format(len(self.getRestaurantList()))
+     
     #creating a list of features for the recommender system from the list of restaurants using the displayFeatures 
     #method from the Restaurant class
     def restaurantFeatures(self):
@@ -41,5 +43,15 @@ class RestaurantList:
             
     #Displays the list of restaurants
     def getRestaurantList(self):
-        rest_list=self.__restaurant_list
-        return rest_list
+        return self.__restaurant_list
+       
+
+#%%
+ #testing the restaurant class, to be deleted later
+if __name__=='__main__':
+    restaurants = RestaurantList()
+    restaurants.restaurantShow()
+    restaurants.restaurantFeatures()
+    print(restaurants)
+    print(restaurants.getRestaurantList())
+                

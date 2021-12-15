@@ -4,6 +4,7 @@ Created on Tue Dec 14 15:44:52 2021
 
 @author: bakic
 """
+#package import
 import re
 
 class Restaurant:
@@ -17,6 +18,9 @@ class Restaurant:
         self.__price = price
         self.__reviews = reviews
         #location to be added if there's enough time
+    #Prints a string when it is asked to print an instance of this class
+    def __str__(self):
+        return self.displayRestaurant()
     
     #method that displays the restaurant, needs a clean if it will be used for output because self.__cuisine has brackets
     def displayRestaurant(self):
@@ -39,14 +43,11 @@ class Restaurant:
     
     #method that cleans cuisine style (in the TripAdvisor database) and returns it as a string to be ready for the Recommender class
     def displayCuisine(self):
-        cuisine_string = ""
-        for i in range(len(self.__cuisine)):
-            cuisine = self.__cuisine[i]
+        cuisine = self.__cuisine
             #using re package to clean the cuisine style (it is inputed as a string in the database)
-            cuisine = re.sub("\'|\[|\]", "", cuisine)
-            cuisine = re.sub(",", "", cuisine)
-            cuisine_string += cuisine
-        return cuisine_string
+        cuisine = re.sub("\'|\[|\]", "", cuisine)
+        cuisine = re.sub(",", "", cuisine)
+        return cuisine.lower()
     
     #method that cleans and prepares the price for the recommender system. @Angela, take a look if you want to use these categories or sth else    
     #I think I got all price tags, I've checked with df_berlin["Price_Range"].unique()
@@ -68,3 +69,19 @@ class Restaurant:
     #Getter for the name attribute
     def getName(self):
         return self.__name
+    
+#%%
+
+if __name__=='__main__':
+    restaurant = Restaurant("Hako", "['japanese', 'noodle', 'Spicy']", 1, 5, "$$ - $$$", 1000)
+    restaurant.displayRestaurant()
+    restaurant.getCuisine()
+    restaurant.getRating()
+    restaurant.getReviews()
+    restaurant.displayCuisine()
+    restaurant.displayPrice()
+    restaurant.displayFeatures()
+    print(restaurant)
+
+
+    

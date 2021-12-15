@@ -6,21 +6,6 @@ Created on Tue Dec 14 16:08:10 2021
 """
 
 #package import
-import pandas as pd
-import numpy as np
-from sklearn.metrics.pairwise import cosine_similarity
-from sklearn.feature_extraction.text import CountVectorizer
-import math
-import random
-import re
-
-#import data
-#from data import df_berlin
-
-#class import
-from class_restaurant import Restaurant
-
-from class_restaurantlist import RestaurantList
 
 from class_recommender import RecommenderSystem 
 
@@ -40,7 +25,7 @@ while tries <= 5:
     cuisine = input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese. 
              Make sure to separate your entries with a comma (,).""")
     price = input("""What is your prefered price range? /n
-              Enter 'budget', 'medium' or 'luxury'""")
+              Enter 'budget', 'medium' or 'luxury' """)
     
     #to be deleted with user class
     user = cuisine + " " + price
@@ -50,13 +35,13 @@ while tries <= 5:
     recommendation.setPreparedList()
     recommendation.outputResult2()
     
-    happy = input("Are you happy with your recommendation? \nEnter Y for yes and N for no").upper()
+    happy = input("Are you happy with your recommendation? \nEnter Y for yes and N for no. ").upper()
     
     if happy == "Y":
         print("Thank you for using FoodNow. Enjoy!")
         break
     else:
-        do_over = input("Do you want to try again? \nEnter Y for yes and N for no").upper()
+        do_over = input("Do you want to try again? \nEnter Y for yes and N for no. ").upper()
         if do_over == "N":
             print("We are sorry you couldn't find what you were looking for.")
             break

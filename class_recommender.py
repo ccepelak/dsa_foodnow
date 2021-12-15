@@ -7,16 +7,9 @@ Created on Thu Nov 25 18:49:00 2021
 """
 
 #package import
-import pandas as pd
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import CountVectorizer
-
-#import data
-from data import df_berlin
-
-#class import
-from class_restaurant import Restaurant
 from class_restaurantlist import RestaurantList
 
 
@@ -25,11 +18,13 @@ from class_restaurantlist import RestaurantList
 
 class RecommenderSystem:
     #Constructor
-    def __init__(self, user_input):
+    def __init__(self, user_preference):
         self.__restaurants= RestaurantList()
-        self.__user_preference=user_input
+        self.__user_preference=user_preference
         self.__prepared_list=[]
-     
+    #Prints a string when it is asked to print an instance of this class
+    def __str__(self):
+        return 'This is a Cosine Similarity recommender system. With input {}'.format(self.getUserInput())    
         
     #getters and setters:
     #returns the restaurant list.
@@ -92,8 +87,7 @@ class RecommenderSystem:
         for index in indexes2:
            restaurants_selected=self.getRestaurants().getRestaurantList()[index]
            closest.append(restaurants_selected)
-           closest_features.append(restaurants_selected.getCuisine())
-        print(closest_features)
+           closest_features.append(restaurants_selected.displayCuisine())
         return closest
     
     #Filters the selected restaurants according to their ratings.
@@ -102,21 +96,31 @@ class RecommenderSystem:
         sorted_rest = sorted(rest_list, key=lambda x: x.getRating(), reverse=True)
         return sorted_rest[0:3]
         
-    #Displays the 3 selected restaurants on a dictionary name: features.
-    def outputResult(self):
-        closest=self.filter_best_ranked()
-        features={}
-        for rest in closest: 
-            features.update({rest.getName():rest.displayFeatures()})
-        return features
-    
-    #Helena's output
+    #Displays the 3 selected restaurants using the displayRestaurant() method from the restaurantClass.
     def outputResult2(self):
         closest=self.filter_best_ranked()
         f = ""
         no = 1
         print("Your matches are:")
         for rest in closest:
-            f = str(no) + " " + rest.displayRestaurant() 
+            f = str(no) + ". " + rest.displayRestaurant() 
             no += 1
             print(f)
+            
+#%%
+
+if __name__=='__main__':
+    input2="International European Spicy luxury"
+    #Creating the recommender system
+    syst=RecommenderSystem(input2)
+       
+    #running the required methods from the recommender system class
+    syst.setPreparedList()
+    syst.getPreparedList()
+    syst.get_similar_restaurants()
+    syst.list_results()     
+    syst.getSelectedIndexes()
+    syst.getSelectedRestaurants()
+    syst.filter_best_ranked()
+    syst.outputResult2()
+    print(syst)

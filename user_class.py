@@ -74,6 +74,14 @@ class User_Preference:
         features = self.Cuisine_Style() + " " + self.getPrice()
         return features
 
+    def outputUserFinal(self):
+        return name, features 
+
+
+
+
+
+
 
 
 

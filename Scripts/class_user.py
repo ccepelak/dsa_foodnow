@@ -1,9 +1,35 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Thu Dec 16 20:23:30 2021
+@author: angeladuarte, ccpelak, bakic, egracialeon
 
-@author: angeladuarte and @ccepelak
+This script creates a class UserPreferences with all the user preferences.
+
+The script requieres  "re" and the RestaurantList from the class_restaurantlist.
+
+This file can also be imported as a module and contains the following
+functions:
+    
+    getName():
+        get the name of the user
+    getPrice():
+        get the price
+    validatePrice():
+        validates the price within range
+    setPrice():
+        Recodes price to be ready for recommender class
+    cleanCuisineStyle();
+        clean the cuisine style selected by the user
+    validatesCuisineStyle():
+        validates user entry. If it's not on the list it asks for input again
+    getCuisineStyle():
+        Getter for cuisine style
+    displayFeatures():
+        Displays prefered cuisinestyle and price on a string
+    outputUserFinal():
+        Outputs a list with the name and features
+
+    
 """
 
 import re
@@ -11,6 +37,41 @@ from class_restaurantlist import RestaurantList
 
 
 class UserPreference:
+    '''
+    A class used to represent all user preferences
+    
+    Attributes:
+    ---------
+    name: str
+        name of the user
+    cuisine_style: list
+        user preferences
+    price : str
+        the user price preference
+        
+    Methods:
+    ------
+    
+    getName():
+        get the name of the user
+    getPrice():
+        get the price
+    validatePrice():
+        validates the price within range
+    setPrice():
+        Recodes price to be ready for recommender class
+    cleanCuisineStyle();
+        clean the cuisine style selected by the user
+    validatesCuisineStyle():
+        validates user entry. If it's not on the list it asks for input again
+    getCuisineStyle():
+        Getter for cuisine style
+    displayFeatures():
+        Displays prefered cuisinestyle and price on a string
+    outputUserFinal():
+        Outputs a list with the name and features
+    '''
+    
     #Constructor
     def __init__(self, name, cuisine_style, price):
         self.name = name
@@ -20,6 +81,20 @@ class UserPreference:
     #class method that takes input from the user to store it in the atributes
     @classmethod
     def from_input(cls):
+        '''
+        class method that takes input from the user to store it in the atributes
+
+        Parameters
+        ----------
+        cls : input
+            user input
+
+        Returns
+        -------
+        
+            DESCRIPTION.
+
+        '''
         return cls(input("What is your name? "), 
                    input("""What would you like to eat? Add cuisine descriptions like vegan, gluten-free, or japanese.
                  Make sure to separate your entries with a comma (,). """),
@@ -28,12 +103,38 @@ class UserPreference:
                        """))
     #Getter for name
     def getName(self):
+        '''
+        get the name of the user
+
+        Returns
+        -------
+        TYPE
+            DESCRIPTION.
+
+        '''
         return self.name.capitalize()
     #Getter for price
     def getPrice(self):
+        '''
+        get the price
+
+        Returns
+        -------
+        price
+            turns price to int
+
+        '''
         return int(self.price)
     #Validates if price is within raneg
     def validatePrice(self):
+        '''
+        validates the price within range
+
+        Returns
+        -------
+        None.
+
+        '''
         price=self.getPrice()
         while price not in range(1, 4, 1):
             print("Sorry! We don't understant what you meant with the price:" + str(price))
@@ -41,6 +142,15 @@ class UserPreference:
         self.price=price
     #Recodes price to be ready for recommender class
     def setPrice(self):
+        '''
+        Recodes price to be ready for recommender class
+
+        Returns
+        -------
+        price_string : str
+            turns int price to str
+
+        '''
         price_string=""
         if self.price == 1:
             price_string = "budget"
@@ -51,6 +161,15 @@ class UserPreference:
         return price_string
     #Cleans cuisine style
     def cleanCuisineStyle(self):
+        '''
+        clean the cuisine style selected by the user
+
+        Returns
+        -------
+        cuisine
+            returns cuisine style lowered
+
+        '''
         cuisine=self.cuisine_style
         cuisine = re.sub("\'|\[|\]", "", cuisine)
         cuisine = re.sub(",", "", cuisine)
@@ -58,6 +177,14 @@ class UserPreference:
     
     #validates user entry. If it's not on the list it asks for input again
     def validateCuisineStyle(self):
+        '''
+        validates user entry. If it's not on the list it asks for input again
+
+        Returns
+        -------
+        None.
+
+        '''
         restaurantList=RestaurantList()
         cuisines=restaurantList.getCuisineListed()
         preferred_cuisine=re.split(r'\W+', self.cuisine_style.lower())
@@ -79,13 +206,42 @@ class UserPreference:
                 pass
     #Getter for cuisine style
     def getCuisineStyle(self):
+        '''
+        Getter for cuisine style
+
+        Returns
+        -------
+        cuisine_style
+            preferences
+
+        '''
         return self.cuisine_style
     #Displays prefered cuisinestyle and price on a string
     def displayFeatures(self):
+        '''
+        Displays prefered cuisinestyle and price on a string
+
+        Returns
+        -------
+        features : TYPE
+            DESCRIPTION.
+
+        '''
         features = self.cleanCuisineStyle() + " " + self.setPrice()
         return features
     #Outputs a list with the name and features.
     def outputUserFinal(self):
+        '''
+        Outputs a list with the name and features.
+
+        Returns
+        -------
+        user name
+            name of the user
+        features
+            user preferences
+
+        '''
         return self.getName(), self.displayFeatures() 
 
 

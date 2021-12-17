@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Dec 14 16:13:54 2021
+@author: angeladuarte, ccpelak, bakic, egracialeon
 
-@author: bakic
+This script have the dataframe that is used in the recommendation system.
+It has a TripAdvisor Restaurant Detail List that includes information about
+restaurants around the world.
+
+The script requieres "pandas" and it does not have methods.
+
 """
 
 import pandas as pd

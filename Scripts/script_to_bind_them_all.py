@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Dec 14 16:08:10 2021
+@author: angeladuarte, ccpelak, bakic, egracialeon
 
-@author: bakic
+This script runs the recommendation system for the app foodnow.
+
+The script requieres  the RecommenderSystem from the class_recomender.
+
 """
 
 #package import
 
 from class_recommender import RecommenderSystem
-from class_user import UserPreference
 
-#to get recommendations, run entire script below:
+#to get recommendations, run this:
 
 print(input(
 """
@@ -24,31 +26,30 @@ Press any key to start.
 tries = 1
 while tries <= 5:
     
-    #user
-    
-    user=UserPreference.from_input()
-    user.validateCuisineStyle()
-    user.validatePrice()
-    
-    print("\n")
-    print(user.getName() + ", you are looking for: " + user.getCuisineStyle() + " " + str(user.setPrice()) + " priced cuisine")
-    print("\n")
+    cuisine = input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
+             Make sure to separate your entries with a comma (,).""")
+    price = input("""What is your prefered price range? /n
+              Enter 'budget', 'medium' or 'luxury' """)
 
+    #to be deleted with user class
+    user = cuisine + " " + price
+
+    print("You are looking for: " + user)
 
     #minimum code to get output
-    recommendation = RecommenderSystem(user.displayFeatures())
+    recommendation = RecommenderSystem(user)
     recommendation.setPreparedList()
-    recommendation.outputResult()
+    recommendation.outputResult2()
 
-    happy = input("Are you happy with your recommendation, " + user.getName() + "?" + "\nEnter Y for yes and N for no.").upper()
+    happy = input("Are you happy with your recommendation? \nEnter Y for yes and N for no. ").upper()
 
     if happy == "Y":
-        print(user.getName() + ", thank you for using FoodNow. Enjoy!")
+        print("Thank you for using FoodNow. Enjoy!")
         break
     else:
         do_over = input("Do you want to try again? \nEnter Y for yes and N for no. ").upper()
         if do_over == "N":
-            print("We are sorry you couldn't find what you were looking for, " + user.getName())
+            print("We are sorry you couldn't find what you were looking for.")
             break
         else:
             tries += 1

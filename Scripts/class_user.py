@@ -11,7 +11,7 @@ from tkinter import *
 from class_restaurantlist import RestaurantList
 
 
-class User_Preference:
+class UserPreference:
     
     def __init__(self, name, cuisine_style):
         self.name = name

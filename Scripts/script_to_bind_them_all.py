@@ -28,8 +28,11 @@ while tries <= 5:
     
     user=UserPreference.from_input()
     user.validateCuisineStyle()
+    user.validatePrice()
     
-    print(user.getName() + ", you are looking for: " + user.getCuisineStyle())
+    print("\n")
+    print(user.getName() + ", you are looking for: " + user.getCuisineStyle() + " " + str(user.setPrice()) + " priced cuisine")
+    print("\n")
 
 
     #minimum code to get output

@@ -35,9 +35,9 @@ class UserPreference:
         return int(self.price)
     #Validates if price is within raneg
     def validatePrice(self):
-        price=int(self.getPrice())
-        while price not in range(1, 3, 1):
-            print("Sorry! We don't understant what you meant with the price:" + str(self.getPrice()))
+        price=self.getPrice()
+        while price not in range(1, 4, 1):
+            print("Sorry! We don't understant what you meant with the price:" + str(price))
             price=int(input("Please enter 1 for budget; 2 for medium; and 3 for luxury."))
         self.price=price
     #Recodes price to be ready for recommender class

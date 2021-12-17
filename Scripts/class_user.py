@@ -62,7 +62,6 @@ class UserPreference:
         restaurantList=RestaurantList()
         cuisines=restaurantList.getCuisineListed()
         preferred_cuisine=re.split(r'\W+', self.cuisine_style.lower())
-        print(preferred_cuisine)
         #compare inputs to restaurant list values
         for i in range(len(preferred_cuisine)):
             if preferred_cuisine[i] not in cuisines:

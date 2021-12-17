@@ -15,13 +15,13 @@ class RestaurantList:
         #creates empty list
         self.__restaurant_list = []  
         
-        #here iterrate over data frame using pandas to create a restaurant list. Take note that the column names have been changed
-        #to not include empty spaces, I didn't manage otherwise. If we can find a way to iterrate over rows with original names, that might be better
+        #iterrate over data frame using pandas to create a restaurant list
         for index, rows in df_berlin.iterrows():
             #create list from current row using Restaurant class
             restaurant = Restaurant(rows.Name, rows.Cuisine_Style, rows.Ranking, rows.Rating, rows.Price_Range, rows.Number_of_Reviews)
             #append the list
             self.__restaurant_list.append(restaurant)
+    
     #Prints a string when it is asked to print an instance of this class   
     def __str__(self):
         return 'This is a list of restaurant with {} entries'.format(len(self.getRestaurantList()))
@@ -45,6 +45,7 @@ class RestaurantList:
     def getRestaurantList(self):
         return self.__restaurant_list
     
+    #returns a list of all cuisines for the user class input validation
     def getCuisineListed(self):
         cuisine_list=[]
         for  i in range(len(self.__restaurant_list)): 
@@ -52,10 +53,7 @@ class RestaurantList:
                 if cuisine not in cuisine_list:
                     cuisine_list.append(cuisine)
         return cuisine_list
-       
-    def getSize(self):
-        length=len(self.__restaurant_list)
-        return length
+    
 
 #%%
  #testing the restaurant class, to be deleted later

@@ -9,7 +9,6 @@ import re
 
 class Restaurant:
     #defines what kind of input does the restaurant take
-    #we can probably delete ranking, we are not using it?
     def __init__(self, name, cuisine, ranking, rating, price, reviews):
         self.__name = name
         self.__cuisine = cuisine
@@ -17,17 +16,17 @@ class Restaurant:
         self.__rating = rating
         self.__price = price
         self.__reviews = reviews
-        #location to be added if there's enough time
+
     #Prints a string when it is asked to print an instance of this class
     def __str__(self):
         return self.displayRestaurant()
     
-    #method that displays the restaurant, needs a clean if it will be used for output because self.__cuisine has brackets
+    #method that displays the restaurant
     def displayRestaurant(self):
         display = self.getName() + " prepares " + self.displayCuisine() + " cuisine and it's rated at " + str(self.getRating()) + " by " + str(self.getReviews()) + " people like you." 
         return display
     
-    #method that returns cuisine styles from the restaurant, to be deleted later (just for checking)
+    #method that returns cuisine styles from the restaurant
     def getListedCuisine(self):
         cuisine=self.displayCuisine()
         splited=re.split(r'\W+', cuisine)

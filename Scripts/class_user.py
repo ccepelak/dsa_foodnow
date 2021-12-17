@@ -7,7 +7,6 @@ Created on Thu Dec 16 20:23:30 2021
 """
 
 import re
-from tkinter import *
 from class_restaurantlist import RestaurantList
 
 
@@ -66,6 +65,12 @@ class UserPreference:
         for i in range(len(preferred_cuisine)):
             if preferred_cuisine[i] not in cuisines:
                 print("Sorry! ", preferred_cuisine[i], " is not a valid input! Please input your cuisine styles again.")
+                see=input("Do you want to see the list of possible cuisine styles?Y or N")
+                if(see.upper()=="Y"):
+                    cuisines.sort()
+                    print(cuisines)
+                else:
+                    pass
                 new_cuisine=input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
                                   Make sure to separate your entries with a comma (,). """)
                 self.cuisine_style=new_cuisine

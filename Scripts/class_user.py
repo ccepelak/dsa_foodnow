@@ -12,7 +12,7 @@ from class_restaurantlist import RestaurantList
 
 
 class UserPreference:
-    
+    #Constructor
     def __init__(self, name, cuisine_style):
         self.name = name
         self.cuisine_style = cuisine_style

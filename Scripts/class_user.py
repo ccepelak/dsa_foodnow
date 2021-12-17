@@ -47,7 +47,7 @@ class UserPreference:
         return self.price
         
     def setCuisineStyle(self):
-        pass
+        self.cuisine_style=cleanCuisineStyle()
     
     def cleanCuisineStyle(self):
         cuisine=self.cuisine_style
@@ -59,15 +59,15 @@ class UserPreference:
         restaurantList=RestaurantList()
         cuisines=restaurantList.getCuisineListed()
         preferred_cuisine=re.split(r'\W+', self.cuisine_style.lower())
+        print(preferred_cuisine)
         #compare inputs to restaurant list values
         for i in range(len(preferred_cuisine)):
             if preferred_cuisine[i] not in cuisines:
-              print("Sorry! ", preferred_cuisine[i], " is not a valid input! Please try again.")
-              new_cuisine=input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
-            Make sure to separate your entries with a comma (,). """)
-              self.cuisine_style=new_cuisine
-            else:
-                break
+                print("Sorry! ", preferred_cuisine[i], " is not a valid input! Please try again.")
+                new_cuisine=input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
+              Make sure to separate your entries with a comma (,). """)
+                self.cuisine_style=new_cuisine
+                
       
     def getCuisineStyle(self):
         return self.cuisine_style
@@ -84,14 +84,27 @@ class UserPreference:
 #%%
 
 if __name__=='__main__':
-    user1=User_Preference.from_input()
+    user1=UserPreference.from_input()
     user1.getName()
     user1.getCuisineStyle()
-    user1.cleanCuisineStyle()
     user1.validateCuisineStyle()
+    user1.cleanCuisineStyle()
     user1.setPrice()
     user1.getPrice()
     user1.displayFeatures()
     user1.outputUserFinal()
 
 #%%
+
+restaurantList=RestaurantList()
+cuisines=restaurantList.getCuisineListed()
+preferred_cuisine=re.split(r'\W+', "japanese, glass")
+print(preferred_cuisine)
+     #compare inputs to restaurant list values
+     for i in range(len(preferred_cuisine)):
+         if preferred_cuisine[i] not in cuisines:
+             print("Sorry! ", preferred_cuisine[i], " is not a valid input! Please try again.")
+             new_cuisine=input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
+           Make sure to separate your entries with a comma (,). """)
+             self.cuisine_style=new_cuisine
+             

@@ -10,7 +10,7 @@ Created on Tue Dec 14 16:08:10 2021
 from class_recommender import RecommenderSystem
 from class_user import UserPreference
 
-#to get recommendations, run this:
+#to get recommendations, run entire script below:
 
 print(input(
 """

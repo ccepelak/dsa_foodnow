@@ -13,38 +13,42 @@ from class_restaurantlist import RestaurantList
 
 class UserPreference:
     #Constructor
-    def __init__(self, name, cuisine_style):
+    def __init__(self, name, cuisine_style, price):
         self.name = name
         self.cuisine_style = cuisine_style
-        self.price=""
+        self.price=price
         
     @classmethod
     def from_input(cls):
         return cls(input("What is your name? "), 
                    input("""What would you like to eat? Add cuisine descriptions like vegan, gluten-free, or japanese.
-                 Make sure to separate your entries with a comma (,). """))
-
-    
+                 Make sure to separate your entries with a comma (,). """),
+                 input("""What is your preferred price?
+                       Enter 1 for budget; 2 for medium; and 3 for luxury:
+                       """))
+ 
     def getName(self):
         return self.name
     
-    def setPrice(self):
-        root = Tk()
-        OPTIONS = ["budget", "medium", "luxury"] 
-        variable = StringVar(root)
-        variable.set(OPTIONS[0]) # default value
-        w = OptionMenu(root, variable, *OPTIONS)
-        root.geometry( "200x200" )
-        w.pack()
-        def ok():
-            print ("value is:" + variable.get())
-        button = Button(root, text="OK", command=ok)
-        button.pack()
-        mainloop()
-        self.price=variable.get() 
-        
     def getPrice(self):
-        return self.price
+        return int(self.price)
+    
+    def validatePrice(self):
+        price=int(self.getPrice())
+        while price not in range(1, 3, 1):
+            print("Sorry! We don't understant what you meant with the price:" + str(self.getPrice()))
+            price=int(input("Please enter 1 for budget; 2 for medium; and 3 for luxury."))
+        self.price=price
+    
+    def setPrice(self):
+        price_string=""
+        if self.price == 1:
+            price_string = "budget"
+        elif self.price == 2:
+            price_string = 'medium'
+        else:
+            price_string = 'luxury'
+        return price_string
         
     def setCuisineStyle(self):
         self.cuisine_style=cleanCuisineStyle()
@@ -68,12 +72,11 @@ class UserPreference:
               Make sure to separate your entries with a comma (,). """)
                 self.cuisine_style=new_cuisine
                 
-      
     def getCuisineStyle(self):
         return self.cuisine_style
     
     def displayFeatures(self):
-        features = self.cleanCuisineStyle() + " " + self.getPrice()
+        features = self.cleanCuisineStyle() + " " + self.setPrice()
         return features
 
     def outputUserFinal(self):
@@ -89,10 +92,12 @@ if __name__=='__main__':
     user1.getCuisineStyle()
     user1.validateCuisineStyle()
     user1.cleanCuisineStyle()
+    user1.validatePrice()
     user1.setPrice()
     user1.getPrice()
     user1.displayFeatures()
     user1.outputUserFinal()
+    
 
 #%%
 

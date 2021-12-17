@@ -25,6 +25,7 @@ tries = 1
 while tries <= 5:
     
     #user
+    
     user=UserPreference.from_input()
     user.validateCuisineStyle()
     

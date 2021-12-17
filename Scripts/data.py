@@ -8,7 +8,7 @@ Created on Tue Dec 14 16:13:54 2021
 import pandas as pd
 
 #Preparing the data
-df = pd.read_csv("Data/TA_restaurants_curated.csv")
+df = pd.read_csv("TA_restaurants_curated.csv")
 
 #filter restaurants in Berlin
 df_Berlin=df[df.City=="Berlin"]

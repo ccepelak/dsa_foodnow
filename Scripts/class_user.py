@@ -21,7 +21,7 @@ class User_Preference:
     @classmethod
     def from_input(cls):
         return cls(input("What is your name? "), 
-                   input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
+                   input("""What would you like to eat? Add cuisine descriptions like vegan, gluten-free, or japanese.
                  Make sure to separate your entries with a comma (,). """))
 
     
@@ -57,14 +57,15 @@ class User_Preference:
     
     def validateCuisineStyle(self):
         restaurantList=RestaurantList()
-        restaurants=restaurantList.getRestaurantList()
+        cuisines=restaurantList.getCuisineListed()
+        preferred_cuisine=re.split(r'\W+', self.cuisine_style.lower())
         #compare inputs to restaurant list values
-        for i in range(len(restaurants)):
-            if self.cuisine_style.lower() not in restaurantList.getCuisineListed():
-              print("Sorry! ", self.cuisine_style, " is not a valid input! Please try again.")
-              cuisine=input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
+        for i in range(len(preferred_cuisine)):
+            if preferred_cuisine[i] not in cuisines:
+              print("Sorry! ", preferred_cuisine[i], " is not a valid input! Please try again.")
+              new_cuisine=input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
             Make sure to separate your entries with a comma (,). """)
-              self.cuisine_style=cuisine
+              self.cuisine_style=new_cuisine
             else:
                 break
       

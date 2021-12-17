@@ -36,15 +36,15 @@ while tries <= 5:
     recommendation.setPreparedList()
     recommendation.outputResult()
 
-    happy = input("Are you happy with your recommendation? \nEnter Y for yes and N for no. ").upper()
+    happy = input("Are you happy with your recommendation, " + user.getName() + "?" + "\nEnter Y for yes and N for no.").upper()
 
     if happy == "Y":
-        print("Thank you for using FoodNow. Enjoy!")
+        print(user.getName() + ", thank you for using FoodNow. Enjoy!")
         break
     else:
         do_over = input("Do you want to try again? \nEnter Y for yes and N for no. ").upper()
         if do_over == "N":
-            print("We are sorry you couldn't find what you were looking for.")
+            print("We are sorry you couldn't find what you were looking for, " + user.getName())
             break
         else:
             tries += 1

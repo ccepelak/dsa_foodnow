@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module class_restaurantlist</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>class_restaurantlist</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/estebangracialeon/Documents/PYTHON/dsa_foodnow-main_2/Scripts/class_restaurantlist.py">/Users/estebangracialeon/Documents/PYTHON/dsa_foodnow-main_2/Scripts/class_restaurantlist.py</a></font></td></tr></table>
+    <p><tt>@author:&nbsp;angeladuarte,&nbsp;ccpelak,&nbsp;bakic,&nbsp;egracialeon<br>
+&nbsp;<br>
+This&nbsp;script&nbsp;creates&nbsp;a&nbsp;list&nbsp;of&nbsp;all&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurant&nbsp;&nbsp;that&nbsp;will&nbsp;be&nbsp;used&nbsp;<br>
+in&nbsp;the&nbsp;recommender&nbsp;class.&nbsp;<br>
+&nbsp;<br>
+The&nbsp;script&nbsp;requieres&nbsp;&nbsp;the&nbsp;database&nbsp;df_berlin&nbsp;and&nbsp;the&nbsp;Restaurant&nbsp;from&nbsp;the<br>
+class_restaurant.<br>
+&nbsp;<br>
+This&nbsp;file&nbsp;can&nbsp;also&nbsp;be&nbsp;imported&nbsp;as&nbsp;a&nbsp;module&nbsp;and&nbsp;contains&nbsp;the&nbsp;following<br>
+functions:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restaurantFeatures():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;create&nbsp;a&nbsp;list&nbsp;of&nbsp;features&nbsp;for&nbsp;the&nbsp;recommender&nbsp;system&nbsp;from&nbsp;the&nbsp;restaurants<br>
+&nbsp;&nbsp;&nbsp;&nbsp;restaurantShow():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shows&nbsp;the&nbsp;restaurant&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;getRestaurantList():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;displays&nbsp;the&nbsp;list&nbsp;of&nbsp;restaurants<br>
+&nbsp;&nbsp;&nbsp;&nbsp;getCuisineListed():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lists&nbsp;the&nbsp;type&nbsp;of&nbsp;cuisine&nbsp;of&nbsp;the&nbsp;restaurants<br>
+&nbsp;&nbsp;&nbsp;&nbsp;getSize():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;the&nbsp;lenght&nbsp;of&nbsp;the&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurants</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="class_restaurantlist.html#RestaurantList">RestaurantList</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RestaurantList">class <strong>RestaurantList</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;class&nbsp;used&nbsp;to&nbsp;represent&nbsp;all&nbsp;the&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurant&nbsp;in&nbsp;<a href="#RestaurantList">RestaurantList</a><br>
+&nbsp;<br>
+Attributes:&nbsp;<br>
+--------<br>
+restaurant_list:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;of&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurants&nbsp;as&nbsp;name,&nbsp;ranking&nbsp;reviews,&nbsp;rating...<br>
+&nbsp;<br>
+Methods:<br>
+-------<br>
+<a href="#RestaurantList-restaurantFeatures">restaurantFeatures</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;create&nbsp;a&nbsp;list&nbsp;of&nbsp;features&nbsp;for&nbsp;the&nbsp;recommender&nbsp;system&nbsp;from&nbsp;the&nbsp;restaurants<br>
+<a href="#RestaurantList-restaurantShow">restaurantShow</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;shows&nbsp;the&nbsp;restaurant&nbsp;<br>
+<a href="#RestaurantList-getRestaurantList">getRestaurantList</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;displays&nbsp;the&nbsp;list&nbsp;of&nbsp;restaurants<br>
+<a href="#RestaurantList-getCuisineListed">getCuisineListed</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lists&nbsp;the&nbsp;type&nbsp;of&nbsp;cuisine&nbsp;of&nbsp;the&nbsp;restaurants<br>
+<a href="#RestaurantList-getSize">getSize</a>():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;the&nbsp;lenght&nbsp;of&nbsp;the&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurants<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RestaurantList-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>This&nbsp;is&nbsp;the&nbsp;constructor&nbsp;of&nbsp;the&nbsp;class&nbsp;<a href="#RestaurantList">RestaurantList</a><br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+None.</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>prints&nbsp;a&nbsp;string&nbsp;when&nbsp;it&nbsp;is&nbsp;asked&nbsp;to&nbsp;print&nbsp;an&nbsp;instance&nbsp;of&nbsp;this&nbsp;class<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+str<br>
+&nbsp;a&nbsp;string&nbsp;with&nbsp;a&nbsp;list&nbsp;of&nbsp;restaurants</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-getCuisineListed"><strong>getCuisineListed</strong></a>(self)</dt><dd><tt>lists&nbsp;the&nbsp;type&nbsp;of&nbsp;cuisine&nbsp;of&nbsp;the&nbsp;restaurants<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+cuisine_list&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-getRestaurantList"><strong>getRestaurantList</strong></a>(self)</dt><dd><tt>displays&nbsp;the&nbsp;list&nbsp;of&nbsp;restaurants<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+list&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-getSize"><strong>getSize</strong></a>(self)</dt><dd><tt>get&nbsp;the&nbsp;lenght&nbsp;of&nbsp;the&nbsp;features&nbsp;of&nbsp;the&nbsp;restaurants<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+length&nbsp;:&nbsp;TYPE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;number&nbsp;of&nbsp;features&nbsp;in&nbsp;the&nbsp;restaurant</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-restaurantFeatures"><strong>restaurantFeatures</strong></a>(self)</dt><dd><tt>create&nbsp;a&nbsp;list&nbsp;of&nbsp;features&nbsp;for&nbsp;the&nbsp;recommender&nbsp;system&nbsp;from&nbsp;the&nbsp;restaurants<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+features_list&nbsp;:&nbsp;list<br>
+&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;with&nbsp;features&nbsp;of&nbsp;restaurants</tt></dd></dl>
+
+<dl><dt><a name="RestaurantList-restaurantShow"><strong>restaurantShow</strong></a>(self)</dt><dd><tt>shows&nbsp;the&nbsp;restaurant&nbsp;<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+None.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>df_berlin</strong> =       Unnamed:_0  ...      ID_TA
+0              ...   6307  ...   d5823014
+
+[3438 rows x 11 columns]</td></tr></table>
+</body></html>

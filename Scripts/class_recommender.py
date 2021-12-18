@@ -281,7 +281,7 @@ class RecommenderSystem:
             return sorted_rest[0:3]
             
         #Displays the 3 selected restaurants using the displayRestaurant() method from the restaurantClass.
-        def outputResult2(self):
+        def outputResult(self):
             '''
             Displays the 3 selected restaurants on a dictionary name: features.
     

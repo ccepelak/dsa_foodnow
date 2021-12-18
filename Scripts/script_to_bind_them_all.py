@@ -11,6 +11,7 @@ The script requieres  the RecommenderSystem from the class_recomender.
 #package import
 
 from class_recommender import RecommenderSystem
+from class_user import UserPreference
 
 #to get recommendations, run this:
 
@@ -26,15 +27,6 @@ Press any key to start.
 tries = 1
 while tries <= 5:
     
-<<<<<<< Updated upstream
-    cuisine = input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
-             Make sure to separate your entries with a comma (,).""")
-    price = input("""What is your prefered price range? /n
-              Enter 'budget', 'medium' or 'luxury' """)
-
-    #to be deleted with user class
-    user = cuisine + " " + price
-=======
     #creating user
     
     user=UserPreference.from_input()
@@ -44,14 +36,11 @@ while tries <= 5:
     print("\n")
     print(user.getName() + ", you are looking for: " + user.getCuisineStyle() + " " + str(user.setPrice()) + " priced cuisine")
     print("\n")
->>>>>>> Stashed changes
-
-    print("You are looking for: " + user)
 
     #minimum code to get output
-    recommendation = RecommenderSystem(user)
+    recommendation = RecommenderSystem(user.displayFeatures())
     recommendation.setPreparedList()
-    recommendation.outputResult2()
+    recommendation.outputResult()
 
     happy = input("Are you happy with your recommendation? \nEnter Y for yes and N for no. ").upper()
 

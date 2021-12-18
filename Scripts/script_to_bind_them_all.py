@@ -26,6 +26,7 @@ Press any key to start.
 tries = 1
 while tries <= 5:
     
+<<<<<<< Updated upstream
     cuisine = input("""What would you like to eat? Add cuisine descriptions like halal, gluten-free, or japanese.
              Make sure to separate your entries with a comma (,).""")
     price = input("""What is your prefered price range? /n
@@ -33,6 +34,17 @@ while tries <= 5:
 
     #to be deleted with user class
     user = cuisine + " " + price
+=======
+    #creating user
+    
+    user=UserPreference.from_input()
+    user.validateCuisineStyle()
+    user.validatePrice()
+    
+    print("\n")
+    print(user.getName() + ", you are looking for: " + user.getCuisineStyle() + " " + str(user.setPrice()) + " priced cuisine")
+    print("\n")
+>>>>>>> Stashed changes
 
     print("You are looking for: " + user)
 
